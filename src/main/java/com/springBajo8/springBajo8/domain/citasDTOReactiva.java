@@ -1,10 +1,12 @@
 package com.springBajo8.springBajo8.domain;
 
+import jdk.internal.org.jline.reader.History;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.*;
 import java.util.UUID;
 
 @Document(collection = "citas")
@@ -17,13 +19,15 @@ public class citasDTOReactiva {
 
     private String nombrePaciente;
 
+    private HashMap<String,String> HistoriaClinica;
+
     private String apellidosPaciente;
 
     private String nombreMedico;
 
     private String apellidosMedico;
 
-    private LocalDate fechaReservaCita;
+    private String fechaReservaCita;
 
     private String horaReservaCita;
 
@@ -77,11 +81,11 @@ public class citasDTOReactiva {
         this.apellidosMedico = apellidosMedico;
     }
 
-    public LocalDate getFechaReservaCita() {
+    public String getFechaReservaCita() {
         return fechaReservaCita;
     }
 
-    public void setFechaReservaCita(LocalDate fechaReservaCita) {
+    public void setFechaReservaCita(String fechaReservaCita) {
         this.fechaReservaCita = fechaReservaCita;
     }
 
@@ -101,7 +105,14 @@ public class citasDTOReactiva {
         this.estadoReservaCita = estadoReservaCita;
     }
 
-    //private Date sendedDate = new Date();
+    public HashMap<String, String> getHistoriaClinica() {
+        return HistoriaClinica;
+    }
+
+    public void setHistoriaClinica(HashMap<String,String> historiaClinica) {
+        HistoriaClinica = historiaClinica;
+    }
+//private Date sendedDate = new Date();
 
 
 }
